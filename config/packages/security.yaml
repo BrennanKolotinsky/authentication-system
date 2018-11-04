@@ -2,7 +2,7 @@ security:
     encoders:
         \App\Entity\User:
             algorithm: bcrypt
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+
     providers:
         my_provider:
             entity:
@@ -19,9 +19,12 @@ security:
                 login_path: login
                 check_path: login
                 provider: my_provider
-        logout:
-            path: /logout
-            target: /
+
+            logout:
+                path: /logout
+                target: /
+
+
 
 
     # Easy way to control access for large sections of your site
