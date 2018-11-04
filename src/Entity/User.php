@@ -82,11 +82,11 @@ class User implements UserInterface, \Serializable
     public function eraseCredentials() {}
 
     public function serialize() {
-        return [$this->id, $this->username, $this->email, $this->password];
+        return serialize([$this->id, $this->username, $this->email, $this->password]);
     }
 
-    public function unserialize($string) {
-        list ($this->id, $this->username, $this->email, $this->password) = unserialized($string, ['allowed_classes' -> false]);
-
+    public function unserialize($string) 
+    {
+        list ($this->id, $this->username, $this->email, $this->password) = unserialize($string, ['allowed_classes' => false]);
     }
 }

@@ -21,7 +21,7 @@ class UserFixture extends Fixture
         $user->setUsername('admin');
 
         $user->setPassword(
-            $this->$encoder->encodePassword($user, '0000')
+            $this->encoder->encodePassword($user, '0000')
         );
 
 
